@@ -94,7 +94,7 @@ if($resultado->num_rows>0){
         echo "<td>".$produto['preco']."</td>";
         echo "<td>".$produto['categoria']."</td>";
         echo "<td><img src='". $produto['caminho_imagem'] ."' alt='Imagem do Produto' width='100'></td>";
-        echo "<td><a href='VerProduto.php?id=".$produto['id']."' class='btn btn-primary' style=' font-family: Times New Roman;'>ver produto</a></td>";
+        echo "<td><div style='padding: 30px;'><a href='VerProduto.php?id=".$produto['id']."' class='botaoAcessar' style=' font-family: Times New Roman;'>ver produto</a></div></td>";
         echo "</tr>";
     }
     echo "</tbody></table>";
@@ -136,7 +136,7 @@ if($resultadoTodosProdutos->num_rows>0){
             <td>".$tudo['preco']."</td>
             <td>".$tudo['categoria']."</td>
             <td><img src='".$tudo['caminho_imagem']."' width = '100'></td>
-            <td><a href='VerProduto.php?id=".$tudo['id']."' class='btn btn-primary' style=' font-family: Times New Roman; margin: 30px;'>ver produto</a></td>
+            <td><div style='padding: 30px;'><a href='VerProduto.php?id=".$tudo['id']."' class='botaoAcessar' style=' font-family: Times New Roman; margin: 30px;'>ver produto</a></div></td>
         </tr>
         
         ";

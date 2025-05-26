@@ -17,6 +17,12 @@ $nome = $_POST['nome'];
 $preco = $_POST['preco'];
 $categoria = $_POST['categoria'];
 
+$qCate = "SELECT id FROM categoria WHERE nome = '$categoria';";
+
+    $ResultadoCate = $con->query($qCate);
+
+    $id_categoria = $ResultadoCate->fetch_assoc()['id'];
+
 if ($_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
     // Se a imagem foi enviada corretamente
     $nomeArquivo = $_FILES['imagem']['name'];
@@ -28,7 +34,7 @@ if ($_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
     $caminhoFinal = $_POST['caminho_atual'];
 }
 
-$query = "UPDATE produto SET nome = '$nome', preco = '$preco', categoria = '$categoria', caminho_imagem = '$caminhoFinal' WHERE id = '$id'";
+$query = "UPDATE produto SET nome = '$nome', preco = '$preco', id_categoria = '$id_categoria', caminho_imagem = '$caminhoFinal' WHERE id = '$id'";
 $resultado = $con->query($query);
 
 if ($resultado) {

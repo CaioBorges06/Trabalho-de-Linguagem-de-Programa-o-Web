@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Meu Perfil</title>
 </head>
 <body>
     <?php
@@ -17,7 +16,7 @@
     
         <div style='display: flex; justify-content: center; align-items: center; position: relative; padding: 20px; background-color: navy;'>
     <div style='position: absolute; left: 0;'>
-        <a href='menu.php' class='btn btn-primary' style='font-family: Times New Roman; font-size: 40px;'>⬅️ Voltar ao Menu</a>
+        <a href='menu.php' class='botaoSalvar' style='font-family: Times New Roman; font-size: 40px;'>⬅️ Voltar ao Menu</a>
     </div>
 
 
@@ -31,11 +30,11 @@
         <h2 style='font-family: Times New Roman; font-size: 40px; color: white;'>Email: ".  $_SESSION['email'] ."</h2><br>
         <h2 style='font-family: Times New Roman; font-size: 40px; color: white;'>Senha: ". $_SESSION['senha']."</h2><br> 
     </div>
-</div>
+</div><br>
 <div style='text-align: center;'>
-    <a href='EditarPerfil.php' class='btn btn-primary' style='margin: 20px; font-size: 40px; border-radius: 30px;' >✏️ Editar dados</a>
+    <a href='EditarPerfil.php' class='botaoSalvar' style='margin: 20px; font-size: 40px; border-radius: 30px;' >✏️ Editar dados</a>
     <form action='MeuPerfil.php' method='POST'>
-        <button type='submit' name='apagar' class='btn btn-danger' style='margin: 20px; font-size: 40px; border-radius: 30px;'>🗑️ Apagar Conta</button><br><br>
+        <button type='submit' name='apagar' class='botaoCancelar' style='margin: 20px; font-size: 40px; border-radius: 30px;'>🗑️ Apagar Conta</button><br><br>
 </div>
     
     ";

@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
@@ -27,7 +28,7 @@ if($resultado->num_rows > 0){
           <div style ='background-color: navy; padding: 40px; text-align: center; display: flex; justify-content: space-between; align-items: center;'>
             <h1 style= 'font-family: Times New Roman; color: white;'>Meus Produtos</h1>
                 <div>
-                    <a href='menu.php' class='btn btn-primary' style='font-family: Times New Roman; font-size: 24px;'>⬅️ Voltar ao Menu</a> 
+                    <a href='menu.php' class='botaoAcessar' style='font-family: Times New Roman; font-size: 24px;'>⬅ Voltar ao Menu</a> 
                 </div>
           </div>
           <table class='table'>
@@ -49,8 +50,8 @@ if($resultado->num_rows > 0){
         echo "<td>".$produto['nome_categoria']."</td>";
         echo "<td>
         <img src='". $produto['caminho_imagem'] ."' alt='Imagem do Produto' width='100'>
-        <a href='ExcluirProduto.php?id=". $produto['id'] ."' class='btn btn-danger' style='margin-left: 20px;'>🗑️ Excluir</a>
-        <a href='EditarProduto.php?id=". $produto['id'] ."' class='btn btn-primary' style='margin-left: 20px;'>✏️ Editar</a>
+        <a href='ExcluirProduto.php?id=". $produto['id'] ."' class='botaoCancelar' style='margin-left: 100px;'>🗑️ Excluir</a>
+        <a href='EditarProduto.php?id=". $produto['id'] ."' class='botaoAcessar' style='margin-left: 20px;'>✏️ Editar</a>
       </td>";
 
         echo "</tr>";

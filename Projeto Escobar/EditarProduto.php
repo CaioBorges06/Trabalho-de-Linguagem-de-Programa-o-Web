@@ -18,11 +18,17 @@ include("ConexaoBanco.php");
 session_start();
 $id = $_GET['id'];
 
-$query = "SELECT * FROM produto WHERE id = '$id'";
+$query = "SELECT produto.id as id, produto.nome as nome, produto.preco as preco, categoria.nome as categoria, produto.caminho_imagem as caminho_imagem
+          FROM produto
+          INNER JOIN categoria ON produto.id_categoria = categoria.id
+          WHERE produto.id = '$id'";
 
 $con->query($query);
 $resultado = $con->query($query);
 $produto = $resultado->fetch_assoc();
+
+ $query1 = "SELECT nome FROM categoria;";
+    $resultado1 = $con->query($query1);
 
 
 
@@ -41,8 +47,23 @@ echo    "
             <label for='preco' style='color: white; font-family: Times New Roman;'>Preço:</label>
             <input type='number' name='preco' id='preco' value=" .$produto['preco']." required><br><br>
 
-            <label for='categoria' style='color: white; font-family: Times New Roman;'>Categoria:</label>
-            <input name='categoria' id='categoria' value=" .$produto['categoria']." required><br><br>
+            ";
+
+
+            echo"<select name='categoria' id='categoria' style='border-radius: 10px; padding: 4px;'>";
+            
+            while ($opcao = $resultado1->fetch_assoc()) {
+            echo "<option value='" . $opcao['nome'] . "'";
+            if ($opcao['nome'] == $produto['categoria']) {
+                echo " selected";
+            }
+            echo ">" . $opcao['nome'] . "</option>";
+            }
+
+
+            echo"</select><br><br>";
+
+            echo    "
             
             <label style='color: white; font-family: Times New Roman;'>Imagem atual:</label><br>
             <img src='".$produto['caminho_imagem']."' alt='Imagem atual' width='150'><br><br>
