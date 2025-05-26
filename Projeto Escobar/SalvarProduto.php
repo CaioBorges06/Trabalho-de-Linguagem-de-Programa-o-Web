@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
@@ -43,12 +44,12 @@
         echo "
             <div style='text-align: center; padding: 40px;'>
                 <h1 style='font-family: Times New Roman; color: white; font-size: 70px;'>Produto cadastrado com sucesso!<h1><br><br>
-                <tr><td><a href ='menu.php' class='btn btn-primary' style='font-size: 40px;'>Voltar ao Menu</a></td></tr>
+                <tr><td><a href ='menu.php' class='botaoSalvar' style='font-size: 40px;'>⬅ Voltar ao Menu</a></td></tr>
             </div>
         ";
     }else{
         echo "<h1>Erro ao cadastrar produto!<h1><br><br>";
-        echo "<tr><td><a href ='menu.php' class='btn btn-primary'>Voltar ao Menu</a></td></tr>";
+        echo "<tr><td><a href ='menu.php' class='botaoSalvar'>⬅ Voltar ao Menu</a></td></tr>";
     }
 
     ?>

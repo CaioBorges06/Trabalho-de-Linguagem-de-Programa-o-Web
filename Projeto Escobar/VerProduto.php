@@ -27,7 +27,9 @@ $resultado = $con->query($query);
 $produto = $resultado->fetch_assoc();
 
 echo " 
-        <br><br><a href ='menu.php' class='botaoSalvar' style='font-size: 40px; font-family: Times New Roman; text-align: left; '>⬅️Voltar ao Menu</a>
+        <div style='padding: 30px;'>
+            <a href ='menu.php' class='botaoSalvar' style='font-size: 40px; font-family: Times New Roman; text-align: left;'>⬅ Voltar ao Menu</a>
+        </div>
         <div style='text-align: center; padding: 40px;'>
         <h1 style='font-family: Times New Roman; color: white; font-size: 70px;'>Detalhes do Produto</h1><br>
 
